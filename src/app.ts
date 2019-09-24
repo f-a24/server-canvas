@@ -14,6 +14,7 @@ app.post('/change', req => {
   const canvas = createCanvas(200, 200);
   const ctx = canvas.getContext('2d');
   ctx.fillStyle = req.body.color;
+  console.log('color', req.body.color);
   ctx.fillRect(20, 30, 60, 40);
   const img = canvas.toDataURL().split(',')[1];
   const decode = new Buffer(img, 'base64');
